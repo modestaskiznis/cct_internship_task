@@ -19,8 +19,8 @@ const RadioInput = () => {
       <path
         d="M4.09875 9.38259L9.83703 17.1495L21.8731 1.32712"
         stroke="#00ADAA"
-        stroke-width="2"
-        stroke-linecap="round"
+        // stroke-width="2"
+        // stroke-linecap="round"
       />
     </svg>
   );
