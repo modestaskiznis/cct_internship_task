@@ -89,33 +89,31 @@ const Task = ({ id, title, task }) => {
       : (statusRef.current.style.width = '300px');
   };
   return (
-    <div>
-      <StyledTaskContainer>
-        <StyledTaskHeader onClick={taskDisplayHandler}>
-          <StyledTaskIdContainer>
-            <StyledTaskIdText>{id}</StyledTaskIdText>
-          </StyledTaskIdContainer>
-          <div>
-            <StyledTaskTitle>{title}</StyledTaskTitle>
-          </div>
-        </StyledTaskHeader>
-        <StyledTaskStatusLine ref={statusRef} />
-        {display ? (
-          task.map((item) => (
-            <StyledSingleTaskContainer key={item.id}>
-              <StyledSingleTaskIconContainer>
-                <RadioInput />
-              </StyledSingleTaskIconContainer>
-              <div>
-                <StyledSingleTaskTitle>{item.text}</StyledSingleTaskTitle>
-              </div>
-            </StyledSingleTaskContainer>
-          ))
-        ) : (
-          <></>
-        )}
-      </StyledTaskContainer>
-    </div>
+    <StyledTaskContainer>
+      <StyledTaskHeader onClick={taskDisplayHandler}>
+        <StyledTaskIdContainer>
+          <StyledTaskIdText>{id}</StyledTaskIdText>
+        </StyledTaskIdContainer>
+        <div>
+          <StyledTaskTitle>{title}</StyledTaskTitle>
+        </div>
+      </StyledTaskHeader>
+      <StyledTaskStatusLine ref={statusRef} />
+      {display ? (
+        task.map((item) => (
+          <StyledSingleTaskContainer key={item.id}>
+            <StyledSingleTaskIconContainer>
+              <RadioInput />
+            </StyledSingleTaskIconContainer>
+            <div>
+              <StyledSingleTaskTitle>{item.text}</StyledSingleTaskTitle>
+            </div>
+          </StyledSingleTaskContainer>
+        ))
+      ) : (
+        <></>
+      )}
+    </StyledTaskContainer>
   );
 };
 
